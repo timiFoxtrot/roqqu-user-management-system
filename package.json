@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run migrate:run-prod && node ./dist/server.js",
+    "start": "node ./dist/server.js",
     "start:dev": "ts-node-dev ./src/server.ts",
     "build": "npm install && npx tsc -b",
     "migrate:generate": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex --knexfile src/knexfile.ts migrate:make -x ts",

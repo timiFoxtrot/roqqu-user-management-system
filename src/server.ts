@@ -6,8 +6,15 @@ import { userRouter } from "./routes/user";
 import { addressRouter } from "./routes/address";
 import { handleErrors } from "./middlewares/error";
 import { postRouter } from "./routes/post";
+import fs from "fs";
+import path from "path";
 
 dotenv.config();
+
+const dataDir = path.resolve(__dirname, "data");
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
 db.raw("select 1+1 as result")
   .then(() => {

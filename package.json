@@ -9,7 +9,7 @@
     "build": "npm install && npx tsc -b",
     "migrate:generate": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex --knexfile src/knexfile.ts migrate:make -x ts",
     "migrate:run": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex migrate:latest --knexfile src/knexfile.ts --env development",
-    "migrate:run-prod": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex migrate:latest --knexfile src/knexfile.ts --env production",
+    "migrate:run-prod": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex migrate:latest --knexfile dist/knexfile.js --env production",
     "test": "jest"
   },
   "repository": {

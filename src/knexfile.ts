@@ -18,7 +18,7 @@ const config: { [key: string]: Knex.Config } = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "../dist/database/migrations",
+      directory: "./database/migrations",
     },
   },
 };

@@ -15,7 +15,7 @@ const config: { [key: string]: Knex.Config } = {
   production: {
     client: "sqlite3",
     connection: {
-      filename: path.resolve(__dirname, "../../data/database.sqlite"),
+      filename: path.resolve(__dirname, "data/database.sqlite"),
     },
     useNullAsDefault: true,
     migrations: {

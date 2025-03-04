@@ -1,4 +1,5 @@
 import { Knex } from "knex";
+import path from "path";
 
 const config: { [key: string]: Knex.Config } = {
   development: {
@@ -14,7 +15,7 @@ const config: { [key: string]: Knex.Config } = {
   production: {
     client: "sqlite3",
     connection: {
-      filename: "./data/database.sqlite",
+      filename: path.resolve(__dirname, "../data/database.sqlite"),
     },
     useNullAsDefault: true,
     migrations: {

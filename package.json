@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "ts-node-dev ./src/server.ts"
+    "start:dev": "ts-node-dev ./src/server.ts",
+    "migrate:generate": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex --knexfile knexfile.ts migrate:make -x ts",
+    "migrate:run": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex migrate:latest --knexfile knexfile.ts --env development"
   },
   "repository": {
     "type": "git",

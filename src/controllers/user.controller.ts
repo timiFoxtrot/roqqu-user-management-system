@@ -82,6 +82,7 @@ export class UserController {
         data: result,
       });
     } catch (error: any) {
+        console.log({error})
       res.status(error.statusCode || 500).json({
         status: "error",
         error: error.message || error,

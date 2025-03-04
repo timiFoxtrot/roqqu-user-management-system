@@ -1,9 +1,10 @@
 import knex from "knex";
+import path from "path";
 
 const db = knex({
   client: "sqlite3",
   connection: {
-    filename: "./data/database.sqlite",
+    filename: path.resolve(__dirname, "../data/database.sqlite"),
   },
   useNullAsDefault: true,
 });

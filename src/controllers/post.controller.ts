@@ -11,7 +11,7 @@ export class PostController {
   ): Promise<any> => {
     try {
       const { userId, title, body } = req.body;
-      await this.postService.createPost({
+      const [result] = await this.postService.createPost({
         userId,
         title,
         body,
@@ -19,6 +19,7 @@ export class PostController {
       res.status(201).json({
         status: "success",
         message: "Post inserted successfully.",
+        data: result,
       });
     } catch (error: any) {
       res.status(error.statusCode || 500).json({

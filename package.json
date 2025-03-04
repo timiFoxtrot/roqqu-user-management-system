@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run migrate:run && node ./dist/server.js",
     "start:dev": "ts-node-dev ./src/server.ts",
-    "build": "npx tsc -b",
+    "build": "tsc -b",
     "migrate:generate": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex --knexfile src/knexfile.ts migrate:make -x ts",
     "migrate:run": "ts-node -r tsconfig-paths/register -r dotenv/config ./node_modules/.bin/knex migrate:latest --knexfile src/knexfile.ts --env development",
     "test": "jest"

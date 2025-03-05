@@ -1,4 +1,5 @@
 import "reflect-metadata";
+import { Request, Response } from "express";
 import dotenv from "dotenv";
 import app from "./app";
 import db from "./database/knex";
@@ -24,6 +25,14 @@ db.raw("select 1+1 as result")
     console.error("Database connection failed: ", error);
     process.exit(1);
   });
+
+app.get("/health", (req: Request, res: Response): any => {
+  return res.status(200).json({
+    status: "status",
+    message: "server is up and running",
+    data: null,
+  });
+});
 
 // Routes
 app.use("/users", userRouter);
